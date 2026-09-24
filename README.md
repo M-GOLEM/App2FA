@@ -1,0 +1,75 @@
+# App2FA
+
+![C#](https://img.shields.io/badge/Language-C%23-512BD4?style=flat-square)
+![.NET](https://img.shields.io/badge/.NET-8-512BD4?style=flat-square)
+![WinForms](https://img.shields.io/badge/UI-WinForms-0078D6?style=flat-square)
+![TOTP](https://img.shields.io/badge/Standard-TOTP-00C853?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
+
+> Desktop two-factor-authentication (2FA / TOTP) manager built with C# and WinForms on .NET 8.
+
+`Secure2FA` stores your 2FA secrets in an encrypted vault, generates TOTP codes on demand, renders QR codes for adding and backing up accounts, and gives audible prompts when codes refresh.
+
+---
+
+## Features
+
+- **TOTP code generation** - standard time-based one-time passwords (`TotpEngine`)
+- **Encrypted vault** - persistent, encrypted storage for account secrets (`Vault` + `CryptoEngine`)
+- **QR rendering** - add / back up accounts by scanning QR codes (`QrEngine`)
+- **Audible prompts** - sound notification on every code refresh (`SoundEngine`)
+- **Unlock screen** - PIN / password gate before the vault opens (`LoginForm`)
+- **Account grid** - main dashboard with live TOTP display (`MainForm`)
+
+---
+
+## Project structure
+
+```
+secure2fa/
+└── Secure2FA/
+    ├── Program.cs
+    ├── Secure2FA.csproj
+    ├── Core/
+    │   ├── TotpEngine.cs     # TOTP code generation
+    │   ├── CryptoEngine.cs   # Encryption & key handling for secrets
+    │   ├── QrEngine.cs       # QR rendering
+    │   ├── SoundEngine.cs    # Audible code-refresh prompts
+    │   └── Vault.cs          # Persistent encrypted vault
+    └── UI/
+        ├── LoginForm.cs      # Unlock screen
+        └── MainForm.cs       # Account grid + TOTP display
+```
+
+---
+
+## Build & run
+
+Via .NET CLI (single-file publish):
+
+```bash
+dotnet publish -c Release /p:PublishSingleFile=true
+```
+
+Or open `Secure2FA.csproj` in Visual Studio Community / Enterprise and hit **Run**.
+
+---
+
+## Requirements
+
+- .NET 8 SDK
+- Windows with WinForms support
+- (Optional) Visual Studio 2022+
+
+---
+
+## Security notes
+
+- Master secrets are encrypted at rest via `CryptoEngine` - the vault is useless without the unlock password.
+- Keep backups of your recovery/backup QR codes when re-adding accounts.
+
+---
+
+## License
+
+MIT
