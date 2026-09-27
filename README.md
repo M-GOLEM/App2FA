@@ -73,3 +73,4 @@ Or open `Secure2FA.csproj` in Visual Studio Community / Enterprise and hit **Run
 ## License
 
 MIT
+A
