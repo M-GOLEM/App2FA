@@ -74,3 +74,4 @@ Or open `Secure2FA.csproj` in Visual Studio Community / Enterprise and hit **Run
 
 MIT
 A
+A
