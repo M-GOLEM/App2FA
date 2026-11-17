@@ -113,3 +113,10 @@ encrypted backup and recovery (Bitwarden, 1Password, Aegis, etc.).
 
 No license file is included in this repository. The source is published for
 reference; contact the author before redistributing.
+
+---
+
+<div align="center">
+  <sub>Built by <a href="https://github.com/M-GOLEM"><b>Mr.GOLEM</b></a> ·
+  watch the work on <a href="https://www.youtube.com/@golemsec">YouTube — GOLEM SEC</a></sub>
+</div>
